@@ -28,12 +28,12 @@ public class DashboardRepository {
             );
 
     private final RowMapper<CustomerRank> customerRankRowMapper = (resultSet, rowNum) ->
-            new CustomerRank(
-                    resultSet.getInt("customer_id"),
-                    resultSet.getBigDecimal("total_spent"),
-                    resultSet.getInt("rank")
-            );
 
+        new CustomerRank(
+                resultSet.getInt("customer_id"),
+                resultSet.getBigDecimal("total_spent"),
+                resultSet.getInt("rank")
+        );
 
     public  List<CustomerRank> findCustomerRankings() {
         String sql = """
